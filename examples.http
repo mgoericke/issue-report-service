@@ -1,0 +1,30 @@
+POST http://localhost:8001/damage-reports
+Content-Type: application/json
+
+{
+  "vehicleId": 123,
+  "damageMessage": "Dat Ding is einfach kaputt"
+}
+
+###
+PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/assignee/mark
+Accepts: application/json
+
+###
+PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/logwork
+Content-Type: application/json
+
+{
+  "hours": 5.5
+}
+
+###
+PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/close
+Accept: application/json
+
+
+###
+GET http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/events
+Accepts: application/json
+
+###

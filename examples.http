@@ -1,17 +1,24 @@
-POST http://localhost:8001/damage-reports
+POST http://localhost:8001/issues
 Content-Type: application/json
 
 {
-  "vehicleId": 123,
-  "damageMessage": "Dat Ding is einfach kaputt"
+  "message": "Dat Ding is einfach kaputt"
 }
 
 ###
-PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/assignee/mark
-Accepts: application/json
+PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/assignee
+Content-Type: application/json
+
+{
+  "name": "Mark"
+}
 
 ###
-PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/logwork
+PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/start
+Accept: application/json
+
+###
+PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/logwork
 Content-Type: application/json
 
 {
@@ -19,12 +26,16 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/close
+PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/close
 Accept: application/json
 
 
 ###
-GET http://localhost:8001/damage-reports/4617a44d-617f-43fa-a400-a24cb5a89f24/events
+GET http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/events
+Accepts: application/json
+
+###
+GET http://localhost:8001/issues
 Accepts: application/json
 
 ###

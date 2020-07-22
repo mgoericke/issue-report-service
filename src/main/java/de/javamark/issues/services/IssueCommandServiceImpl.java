@@ -1,11 +1,9 @@
 package de.javamark.issues.services;
 
-import de.javamark.issues.commands.AddIssueCommand;
-import de.javamark.issues.commands.CloseIssueCommand;
-import de.javamark.issues.commands.LogWorkCommand;
-import de.javamark.issues.commands.SetAssigneeCommand;
+import de.javamark.issues.commands.*;
+import de.javamark.issues.data.AssigneeDto;
 import de.javamark.issues.data.IssueDto;
-import de.javamark.issues.data.LogWorkDto;
+import de.javamark.issues.data.WorkLogDto;
 import org.axonframework.commandhandling.gateway.CommandGateway;
 import org.springframework.stereotype.Service;
 
@@ -22,29 +20,28 @@ public class IssueCommandServiceImpl implements IssueCommandService {
     }
 
     @Override
-    public CompletableFuture<Object> addReport(final IssueDto issueDto) {
-        return this.commandGateway.send(new AddIssueCommand(
+    public CompletableFuture<Object> add(final IssueDto issueDto) {
+        return this.commandGateway.send(new OpenIssueCommand(
                 UUID.randomUUID().toString(),
-                issueDto.getVehicleId(),
-                issueDto.getDamageMessage())
+                issueDto.getMessage())
         );
     }
 
     @Override
-    public CompletableFuture<Object> setAssignee(final String damageReportAggregateId, final String assignee) {
+    public CompletableFuture<Object> assign(final String issueAggregateId, final AssigneeDto assigneeDto) {
         return this.commandGateway.send(
                 new SetAssigneeCommand(
-                        damageReportAggregateId,
-                        assignee)
+                        issueAggregateId,
+                        assigneeDto.getName())
         );
     }
 
     @Override
-    public CompletableFuture<Object> logWork(final String damageReportAggregateId, final LogWorkDto logWorkDto) {
+    public CompletableFuture<Object> logWork(final String issueAggregateId, final WorkLogDto workLogDto) {
         return this.commandGateway.send(
                 new LogWorkCommand(
-                        damageReportAggregateId,
-                        logWorkDto.getHours())
+                        issueAggregateId,
+                        workLogDto.getHours())
         );
     }
 
@@ -53,5 +50,10 @@ public class IssueCommandServiceImpl implements IssueCommandService {
         return this.commandGateway.send(
                 new CloseIssueCommand(damageReportAggregateId)
         );
+    }
+
+    @Override
+    public CompletableFuture<Object> startWorking(final String issueAggregateId) {
+        return this.commandGateway.send(new StartWorkCommand(issueAggregateId));
     }
 }

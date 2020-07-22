@@ -1,5 +1,6 @@
 package de.javamark.issues.data;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import de.javamark.issues.aggregates.IssueStatus;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -12,11 +13,10 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class IssueDto {
 
-    private Long vehicleId;
-
-    private String damageMessage;
+    private String message;
 
     private String assignee;
 

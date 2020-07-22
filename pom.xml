@@ -15,7 +15,7 @@
     <description>Damage Registration with CQRS</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
         <lombok.version>1.18.10</lombok.version>
         <axon.version>4.2</axon.version>
     </properties>
@@ -67,6 +67,17 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>bootstrap</artifactId>
+            <version>3.3.7-1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.webjars</groupId>
+            <artifactId>jquery</artifactId>
+            <version>3.1.1</version>
         </dependency>
 
     </dependencies>

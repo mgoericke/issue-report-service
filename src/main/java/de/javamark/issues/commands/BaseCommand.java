@@ -4,7 +4,8 @@ import lombok.Getter;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Getter
-public class BaseCommand<T> {
+class BaseCommand<T> {
+
     @TargetAggregateIdentifier
     private final T id;
 

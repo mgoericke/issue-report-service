@@ -1,7 +1,9 @@
 package de.javamark.issues.services;
 
+import de.javamark.issues.data.IssueDto;
+
 import java.util.List;
 
 public interface IssueQueryService {
-    List<Object> listEventsForDamageReport(String reportId);
+    List<IssueDto> getAllIssues();
 }

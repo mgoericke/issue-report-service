@@ -11,6 +11,6 @@ import java.math.BigDecimal;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class LogWorkDto {
+public class WorkLogDto {
     private BigDecimal hours;
 }

@@ -4,12 +4,10 @@ import lombok.Getter;
 
 @Getter
 public class IssueCreatedEvent extends BaseEvent<String> {
-    private final String damageMessage;
-    private final Long vehicleId;
+    private final String message;
 
-    public IssueCreatedEvent(final String id, final Long vehicleId, final String damageMessage) {
+    public IssueCreatedEvent(final String id, final String message) {
         super(id);
-        this.damageMessage = damageMessage;
-        this.vehicleId = vehicleId;
+        this.message = message;
     }
 }

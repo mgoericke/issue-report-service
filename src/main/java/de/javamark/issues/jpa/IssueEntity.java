@@ -20,10 +20,7 @@ public class IssueEntity {
     private String id;
 
     @Column
-    private Long vehicleId;
-
-    @Column
-    private String damageMessage;
+    private String message;
 
     @Column
     private String assignee;
@@ -33,6 +30,6 @@ public class IssueEntity {
 
     @Column
     @Enumerated(EnumType.STRING)
-    private IssueStatus status;
+    private IssueStatus status = IssueStatus.PENDING;
 
 }

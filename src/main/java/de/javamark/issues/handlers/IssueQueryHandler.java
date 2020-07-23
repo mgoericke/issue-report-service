@@ -24,6 +24,8 @@ public class IssueQueryHandler {
     public List<IssueDto> handle(final FindAllIssuesQuery query) {
         return this.repository.findAll().stream()
                 .map(issueEntity -> IssueDto.builder()
+                        .id(issueEntity.getId())
+                        .title(issueEntity.getTitle())
                         .assignee(issueEntity.getAssignee())
                         .message(issueEntity.getMessage())
                         .workLogInHours(issueEntity.getWorkLogInHours())

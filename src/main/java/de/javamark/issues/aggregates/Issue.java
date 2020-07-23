@@ -23,6 +23,8 @@ public class Issue {
     @AggregateIdentifier
     private String id;
 
+    private String title;
+
     private String message;
 
     private String assignee;
@@ -39,6 +41,7 @@ public class Issue {
     public Issue(final OpenIssueCommand command) {
         apply(new IssueCreatedEvent(
                 command.getId(),
+                command.getTitle(),
                 command.getMessage()
         ));
     }

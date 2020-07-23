@@ -16,6 +16,10 @@ import java.math.BigDecimal;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class IssueDto {
 
+    private String id;
+
+    private String title;
+    
     private String message;
 
     private String assignee;

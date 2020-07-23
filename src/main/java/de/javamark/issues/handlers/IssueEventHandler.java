@@ -29,6 +29,7 @@ public class IssueEventHandler {
         this.issueEntityRepository.save(IssueEntity.builder()
                 .id(event.getId())
                 .assignee(null)
+                .title(event.getTitle())
                 .message(event.getMessage())
                 .workLogInHours(new BigDecimal(0))
                 .status(IssueStatus.CREATED)

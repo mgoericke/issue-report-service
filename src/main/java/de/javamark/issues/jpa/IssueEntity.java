@@ -20,6 +20,9 @@ public class IssueEntity {
     private String id;
 
     @Column
+    private String title;
+    
+    @Column
     private String message;
 
     @Column

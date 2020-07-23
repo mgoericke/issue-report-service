@@ -26,6 +26,7 @@ POST http://localhost:8001/issues
 Content-Type: application/json
 
 {
+  "title" : "Help!",
   "message": "Computer is broken"
 }
 

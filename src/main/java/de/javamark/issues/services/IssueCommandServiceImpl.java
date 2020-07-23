@@ -23,6 +23,7 @@ public class IssueCommandServiceImpl implements IssueCommandService {
     public CompletableFuture<Object> add(final IssueDto issueDto) {
         return this.commandGateway.send(new OpenIssueCommand(
                 UUID.randomUUID().toString(),
+                issueDto.getTitle(),
                 issueDto.getMessage())
         );
     }

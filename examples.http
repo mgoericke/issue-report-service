@@ -2,11 +2,12 @@ POST http://localhost:8001/issues
 Content-Type: application/json
 
 {
-  "message": "Dat Ding is einfach kaputt"
+  "title": "Etwas stimmt hier nicht",
+  "message": "Hier kommt dann ganz viel Text rein usw."
 }
 
 ###
-PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/assignee
+PUT http://localhost:8001/issues/a182dd0c-75c4-4c35-a441-ef03014c39f3/assignee
 Content-Type: application/json
 
 {
@@ -14,11 +15,11 @@ Content-Type: application/json
 }
 
 ###
-PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/start
+PUT http://localhost:8001/issues/a182dd0c-75c4-4c35-a441-ef03014c39f3/start
 Accept: application/json
 
 ###
-PUT http://localhost:8001/issues/aafd51e8-5dda-438d-bdb7-cc5ba1e06a77/logwork
+PUT http://localhost:8001/issues/a182dd0c-75c4-4c35-a441-ef03014c39f3/logwork
 Content-Type: application/json
 
 {

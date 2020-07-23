@@ -14,14 +14,14 @@ import java.math.BigDecimal;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "damage_report_view")
+@Table(name = "issue_view")
 public class IssueEntity {
     @Id
     private String id;
 
     @Column
     private String title;
-    
+
     @Column
     private String message;
 

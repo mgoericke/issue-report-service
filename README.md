@@ -19,6 +19,13 @@ Powered by:
 ./mvnw clean spring-boot:run
 ```
 
+
+## Web UI
+
+open `http://localhost:8001` in your preferred browser.
+
+## REST API
+
 ### Create an issue
 
 ```
